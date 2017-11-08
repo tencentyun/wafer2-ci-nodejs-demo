@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+    
+    <!-- 印刷体识别 -->
+    <view class="uploader">
+        <view class="uploader-text" bindtap="doWordIndentify">
+            <text>印刷体识别</text>
+        </view>
+        <view class="uploader-container" wx:if="{{ocrImgUrl}}">
+            <image
+                class="uploader-image"
+                src="{{ocrImgUrl}}"
+                mode="aspectFit"
+                bindtap="previewImg"
+            ></image>
+            <view class="uploader-cardinfo" wx:if="{{showOcrResult}}">
+                <text wx:for="{{ocrResult}}" wx:for-item="item" wx:for-index="idx">
+                    {{idx}}：{{item.itemstring}}
+                </text>
+            </view>
+        </view>
+    </view>
+    
+    <!-- 身份证识别 -->
+    <view class="uploader">
+        <view class="uploader-text" bindtap="doIdCardIdentify">
+            <text>身份证识别</text>
+        </view>
+        <view class="uploader-container" wx:if="{{imgUrl}}">
+            <image
+                class="uploader-image"
+                src="{{imgUrl}}"
+                mode="aspectFit"
+                bindtap="previewImg"
+            ></image>
+            <view class="uploader-cardinfo" wx:if="{{showResult}}">
+                <text>姓名：{{ idCardInfo.name }}</text>
+                <text>性别：{{ idCardInfo.sex }}</text>
+                <text>民族：{{ idCardInfo.nation }}</text>
+                <text>生日：{{ idCardInfo.birth }}</text>
+                <text>住址：{{ idCardInfo.address }}</text>
+                <text>身份证号：{{ idCardInfo.id }}</text>
+            </view>
+        </view>
+    </view>
+
+</view>
