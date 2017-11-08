@@ -48,7 +48,15 @@ const CONF = {
 
     // 微信登录态有效期
     wxLoginExpires: 7200,
-    wxMessageToken: 'abcdefgh'
+    wxMessageToken: 'abcdefgh',
+
+    serverHost: 'localhost',
+    tunnelServerUrl: '',
+    tunnelSignatureKey: '',
+    // 腾讯云相关配置可以查看云 API 秘钥控制台：https://console.qcloud.com/capi
+    qcloudAppId: 123000000,
+    qcloudSecretId: '',
+    qcloudSecretKey: ''
 }
 
 module.exports = CONF
